@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.castellan</groupId>
+    <artifactId>castellan</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>castellan-apm</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Castellan APM</name>
+  <description>
+    A Java APM agent: java.lang.instrument + ASM bytecode transformation to auto-instrument
+    JDBC/HTTP/Spring MVC with no source changes required, W3C-trace-context propagation,
+    adaptive sampling, measured instrumentation overhead, and a collector backend to receive,
+    store, and query the resulting traces.
+  </description>
+
+  <modules>
+    <module>apm-core</module>
+    <module>apm-agent</module>
+    <module>apm-collector</module>
+  </modules>
+</project>
