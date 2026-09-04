@@ -1,0 +1,62 @@
+# --- Build output (Maven) ---
+target/
+!.mvn/wrapper/maven-wrapper.jar
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+dependency-reduced-pom.xml
+release.properties
+pom.xml.versionsBackup
+pom.xml.releaseBackup
+pom.xml.tag
+pom.xml.next
+buildNumber.properties
+.mvn/timing.properties
+
+# --- Gradle (caso algum modulo use) ---
+.gradle/
+
+# --- Logs / dumps ---
+*.log
+logs/
+hs_err_pid*.log
+replay_pid*.log
+*.hprof
+core.*
+
+# --- IDEs ---
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+.apt_generated/
+nbproject/private/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Ambiente / segredos ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+
+# --- Temporarios ---
+*.tmp
+*.bak
+*.swp
+*~
