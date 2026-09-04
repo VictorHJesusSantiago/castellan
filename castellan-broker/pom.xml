@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.castellan</groupId>
+    <artifactId>castellan</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>castellan-broker</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Castellan Broker</name>
+  <description>
+    A distributed, partitioned, append-only log broker: Raft consensus implemented from scratch
+    for replication, consumer groups with rebalancing, an idempotent producer for exactly-once
+    writes, segment-file storage with retention and compaction, and a custom binary wire
+    protocol with a Java client.
+  </description>
+
+  <modules>
+    <module>broker-raft</module>
+    <module>broker-storage</module>
+    <module>broker-protocol</module>
+    <module>broker-server</module>
+    <module>broker-client</module>
+  </modules>
+</project>
