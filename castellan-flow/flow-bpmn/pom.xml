@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.castellan</groupId>
+    <artifactId>castellan-flow</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>flow-bpmn</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Castellan Flow :: BPMN</name>
+  <description>
+    A BPMN 2.0 XML parser and token-based process interpreter: sequence flows, gateways
+    (exclusive/parallel/inclusive), service/user/script tasks, boundary and intermediate timer
+    events, and compensation events — interpreted directly against the parsed process graph, not
+    compiled to Java code.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+  </dependencies>
+</project>
