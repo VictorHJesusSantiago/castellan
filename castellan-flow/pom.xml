@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.castellan</groupId>
+    <artifactId>castellan</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>castellan-flow</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Castellan Flow</name>
+  <description>
+    A business process and rules platform: a BPMN 2.0 XML interpreter (not a code generator) with
+    persistent timers and saga-style compensation, a Rete-network rule engine, process
+    versioning, and a REST API to deploy and run both.
+  </description>
+
+  <modules>
+    <module>flow-rules</module>
+    <module>flow-bpmn</module>
+    <module>flow-engine</module>
+    <module>flow-api</module>
+  </modules>
+</project>
