@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.castellan</groupId>
+    <artifactId>castellan</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>castellan-ledger</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Castellan Ledger</name>
+  <description>
+    An event-sourced, CQRS double-entry banking ledger: an immutable event log as the source of
+    truth, idempotent command handling, saga orchestration for multi-account transfers,
+    read-model projections, the transactional outbox pattern for reliable event publishing,
+    reconciliation against external statements, a rule-based antifraud pipeline, multi-tenancy,
+    and a full audit trail. Hexagonal architecture: domain has no framework dependency at all.
+  </description>
+
+  <modules>
+    <module>ledger-domain</module>
+    <module>ledger-application</module>
+    <module>ledger-infrastructure</module>
+    <module>ledger-api</module>
+  </modules>
+</project>
