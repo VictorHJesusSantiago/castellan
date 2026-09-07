@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             id="definitions3" targetNamespace="io.castellan.bpmn.test">
+  <process id="parallel-process" name="Parallel Fork Join">
+    <startEvent id="start" />
+    <sequenceFlow id="f1" sourceRef="start" targetRef="fork" />
+    <parallelGateway id="fork" name="Fork" />
+    <sequenceFlow id="f2" sourceRef="fork" targetRef="creditCheck" />
+    <sequenceFlow id="f3" sourceRef="fork" targetRef="fraudCheck" />
+    <task id="creditCheck" name="Credit Check" />
+    <task id="fraudCheck" name="Fraud Check" />
+    <sequenceFlow id="f4" sourceRef="creditCheck" targetRef="join" />
+    <sequenceFlow id="f5" sourceRef="fraudCheck" targetRef="join" />
+    <parallelGateway id="join" name="Join" />
+    <sequenceFlow id="f6" sourceRef="join" targetRef="end" />
+    <endEvent id="end" />
+  </process>
+</definitions>

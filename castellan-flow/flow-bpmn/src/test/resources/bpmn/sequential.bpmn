@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             id="definitions1" targetNamespace="io.castellan.bpmn.test">
+  <process id="sequential-process" name="Sequential">
+    <startEvent id="start" name="Start" />
+    <sequenceFlow id="f1" sourceRef="start" targetRef="scoreTask" />
+    <scriptTask id="scoreTask" name="Compute Score">
+      <script>score = amount * 2;</script>
+    </scriptTask>
+    <sequenceFlow id="f2" sourceRef="scoreTask" targetRef="reviewTask" />
+    <serviceTask id="reviewTask" name="Rule Review" ruleSet="review-rules" />
+    <sequenceFlow id="f3" sourceRef="reviewTask" targetRef="end" />
+    <endEvent id="end" name="End" />
+  </process>
+</definitions>

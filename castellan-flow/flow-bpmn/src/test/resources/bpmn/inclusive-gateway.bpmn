@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             id="definitions6" targetNamespace="io.castellan.bpmn.test">
+  <process id="inclusive-process" name="Inclusive Fork Join">
+    <startEvent id="start" />
+    <sequenceFlow id="f1" sourceRef="start" targetRef="fork" />
+    <inclusiveGateway id="fork" name="Fork" default="toStandardShipping" />
+    <sequenceFlow id="toGiftWrap" sourceRef="fork" targetRef="giftWrap">
+      <conditionExpression>giftWrap == true</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="toExpressShipping" sourceRef="fork" targetRef="expressShipping">
+      <conditionExpression>express == true</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="toStandardShipping" sourceRef="fork" targetRef="standardShipping" />
+    <task id="giftWrap" name="Gift Wrap" />
+    <task id="expressShipping" name="Express Shipping" />
+    <task id="standardShipping" name="Standard Shipping" />
+    <sequenceFlow id="f2" sourceRef="giftWrap" targetRef="join" />
+    <sequenceFlow id="f3" sourceRef="expressShipping" targetRef="join" />
+    <sequenceFlow id="f4" sourceRef="standardShipping" targetRef="join" />
+    <inclusiveGateway id="join" name="Join" />
+    <sequenceFlow id="f5" sourceRef="join" targetRef="end" />
+    <endEvent id="end" />
+  </process>
+</definitions>

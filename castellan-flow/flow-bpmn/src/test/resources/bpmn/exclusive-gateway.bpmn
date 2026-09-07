@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             id="definitions2" targetNamespace="io.castellan.bpmn.test">
+  <process id="exclusive-process" name="Exclusive Routing">
+    <startEvent id="start" />
+    <sequenceFlow id="f1" sourceRef="start" targetRef="gw1" />
+    <exclusiveGateway id="gw1" name="Amount Check" default="toLowRisk" />
+    <sequenceFlow id="toHighRisk" sourceRef="gw1" targetRef="highRiskTask">
+      <conditionExpression>amount > 10000</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="toMediumRisk" sourceRef="gw1" targetRef="mediumRiskTask">
+      <conditionExpression>amount > 1000 &amp;&amp; amount &lt;= 10000</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="toLowRisk" sourceRef="gw1" targetRef="lowRiskTask" />
+    <task id="highRiskTask" name="Escalate" />
+    <task id="mediumRiskTask" name="Manual Review" />
+    <task id="lowRiskTask" name="Auto Approve" />
+    <sequenceFlow id="f2" sourceRef="highRiskTask" targetRef="end" />
+    <sequenceFlow id="f3" sourceRef="mediumRiskTask" targetRef="end" />
+    <sequenceFlow id="f4" sourceRef="lowRiskTask" targetRef="end" />
+    <endEvent id="end" />
+  </process>
+</definitions>

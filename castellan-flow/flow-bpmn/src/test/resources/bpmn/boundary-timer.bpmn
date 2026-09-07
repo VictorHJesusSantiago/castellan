@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             id="definitions4" targetNamespace="io.castellan.bpmn.test">
+  <process id="approval-process" name="Approval With Timeout">
+    <startEvent id="start" />
+    <sequenceFlow id="f1" sourceRef="start" targetRef="approve" />
+    <userTask id="approve" name="Manager Approval" />
+    <boundaryEvent id="timeoutBoundary" name="Approval Timeout" attachedToRef="approve">
+      <timerEventDefinition>
+        <timeDuration>PT24H</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <sequenceFlow id="f2" sourceRef="approve" targetRef="approved" />
+    <sequenceFlow id="f3" sourceRef="timeoutBoundary" targetRef="timedOut" />
+    <task id="approved" name="Approved" />
+    <task id="timedOut" name="Timed Out" />
+    <sequenceFlow id="f4" sourceRef="approved" targetRef="end" />
+    <sequenceFlow id="f5" sourceRef="timedOut" targetRef="end" />
+    <endEvent id="end" />
+  </process>
+</definitions>

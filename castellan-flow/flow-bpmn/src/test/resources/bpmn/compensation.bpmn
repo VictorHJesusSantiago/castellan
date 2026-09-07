@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             id="definitions5" targetNamespace="io.castellan.bpmn.test">
+  <process id="booking-process" name="Booking With Compensation">
+    <startEvent id="start" />
+    <sequenceFlow id="f1" sourceRef="start" targetRef="reserveHotel" />
+    <serviceTask id="reserveHotel" name="Reserve Hotel" />
+    <boundaryEvent id="reserveHotelCompensation" attachedToRef="reserveHotel">
+      <compensateEventDefinition />
+    </boundaryEvent>
+    <association id="assoc1" sourceRef="reserveHotelCompensation" targetRef="cancelHotel" />
+    <serviceTask id="cancelHotel" name="Cancel Hotel Reservation" />
+    <sequenceFlow id="f2" sourceRef="reserveHotel" targetRef="end" />
+    <endEvent id="end" />
+  </process>
+</definitions>
