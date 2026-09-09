@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.castellan</groupId>
+    <artifactId>castellan-ledger</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>ledger-domain</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Castellan Ledger :: Domain</name>
+  <description>
+    Pure domain model: no Spring, no JPA, no framework dependency of any kind (enforced by this
+    module declaring none) — Account/Money/DoubleEntryTransaction aggregates, domain events, the
+    double-entry invariant, and port interfaces the application layer programs against.
+  </description>
+</project>
