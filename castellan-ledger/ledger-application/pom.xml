@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.castellan</groupId>
+    <artifactId>castellan-ledger</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>ledger-application</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Castellan Ledger :: Application</name>
+  <description>
+    CQRS command/query handling, the transfer saga orchestrator, idempotency-key deduplication,
+    the antifraud rule pipeline, and projection rebuilding — all programmed against
+    ledger-domain's ports, with zero knowledge of which infrastructure implements them.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.castellan</groupId>
+      <artifactId>ledger-domain</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+  </dependencies>
+</project>
